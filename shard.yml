@@ -1,0 +1,13 @@
+name: simple-termbox
+version: 0.1.0
+
+authors:
+  - Samual Black <samuallb@hotmail.com>
+
+targets:
+  simple-termbox:
+    main: src/simple-termbox.cr
+
+crystal: 0.27.2
+
+license: MIT
