@@ -17,58 +17,58 @@ lib LibTermbox
     y : Int32
   end
 
-  fun init = tb_init : LibC::Int
+  fun init = tb_init : Int32
   fun shutdown = tb_shutdown : Void
 
-  fun width = tb_width : LibC::Int
-  fun height = tb_height : LibC::Int
+  fun width = tb_width : Int32
+  fun height = tb_height : Int32
 
-  fun clear = tb_clear : LibC::Int
+  fun clear = tb_clear : Int32
   fun set_clear_attributes = tb_set_clear_attributes(fg : UInt16, bg : UInt16) : Void
 
   fun present = tb_present : Void
 
-  fun set_cursor = tb_set_cursor(x : LibC::Int, y : LibC::Int) : Void
+  fun set_cursor = tb_set_cursor(x : Int32, y : Int32) : Void
 
-  fun put_cell = tb_put_cell(x : LibC::Int, y : LibC::Int, cell : Pointer(Cell)) : Void
-  fun change_cell = tb_change_cell(x : LibC::Int, y : LibC::Int, c : UInt32, fg : UInt16, bg : UInt16) : Void
+  fun put_cell = tb_put_cell(x : Int32, y : Int32, cell : Pointer(Cell)) : Void
+  fun change_cell = tb_change_cell(x : Int32, y : Int32, c : UInt32, fg : UInt16, bg : UInt16) : Void
 
-  fun select_input_mode = tb_select_input_mode(mode : LibC::Int) : LibC::Int
+  fun select_input_mode = tb_select_input_mode(mode : Int32) : Int32
 
-  fun select_output_mode = tb_select_output_mode(mode : LibC::Int) : LibC::Int
+  fun select_output_mode = tb_select_output_mode(mode : Int32) : Int32
 
-  fun peek_event = tb_peek_event(event : Pointer(Event), timeout : LibC::Int) : LibC::Int
-  fun poll_event = tb_poll_event(event : Pointer(Event)) : LibC::Int
+  fun peek_event = tb_peek_event(event : Pointer(Event), timeout : Int32) : Int32
+  fun poll_event = tb_poll_event(event : Pointer(Event)) : Int32
 
   enum Key : UInt16
-    F1 = 0xffff-0
-    F2 = 0xffff-1
-    F3 = 0xffff-2
-    F4 = 0xffff-3
-    F5 = 0xffff-4
-    F6 = 0xffff-5
-    F7 = 0xffff-6
-    F8 = 0xffff-7
-    F9 = 0xffff-8
-    F10 = 0xffff-9
-    F11 = 0xffff-10
-    F12 = 0xffff-11
-    Insert = 0xffff-12
-    Delete = 0xffff-13
-    Home = 0xffff-14
-    End = 0xffff-15
-    PageUp = 0xffff-16
-    PageDowm = 0xffff-17
-    ArrowUp = 0xffff-18
-    ArrowDown = 0xffff-19
-    ArrowLeft = 0xffff-20
-    ArrowRight = 0xffff-21
-    MouseLeft = 0xffff-22
-    MouseRight = 0xffff-23
-    MouseMiddle = 0xffff-24
-    MouseRelease = 0xffff-25
-    MouseWheelUp = 0xffff-26
-    MouseWheelDown = 0xffff-27
+    F1 = 0xFFFF-0
+    F2 = 0xFFFF-1
+    F3 = 0xFFFF-2
+    F4 = 0xFFFF-3
+    F5 = 0xFFFF-4
+    F6 = 0xFFFF-5
+    F7 = 0xFFFF-6
+    F8 = 0xFFFF-7
+    F9 = 0xFFFF-8
+    F10 = 0xFFFF-9
+    F11 = 0xFFFF-10
+    F12 = 0xFFFF-11
+    Insert = 0xFFFF-12
+    Delete = 0xFFFF-13
+    Home = 0xFFFF-14
+    End = 0xFFFF-15
+    PageUp = 0xFFFF-16
+    PageDowm = 0xFFFF-17
+    ArrowUp = 0xFFFF-18
+    ArrowDown = 0xFFFF-19
+    ArrowLeft = 0xFFFF-20
+    ArrowRight = 0xFFFF-21
+    MouseLeft = 0xFFFF-22
+    MouseRight = 0xFFFF-23
+    MouseMiddle = 0xFFFF-24
+    MouseRelease = 0xFFFF-25
+    MouseWheelUp = 0xFFFF-26
+    MouseWheelDown = 0xFFFF-27
 
     CtrlTilde = 0x00
     Ctrl2 = 0x00 # Clash with CtrlTilde
@@ -140,28 +140,28 @@ lib LibTermbox
     Reverse = 0x0400
   end
 
-  enum Event : UInt8
+  enum EventType : UInt8
     Key = 1
     Resize = 2
     Mouse = 3
   end
 
-  enum Error : LibC::Int
+  enum Error : Int32
     UnsupportedTerminal = -1
     FailedToOpenTTY = -2
     PipeTrapError = -3
   end
 
-  CURSOR_HIDE = -1 : LibC::Int
+  CURSOR_HIDE = -1_i32
 
-  enum InputMode : LibC::Int
+  enum InputMode : Int32
     Current = 0
     Escape = 1
     Alt = 2
     Mouse = 4
   end
 
-  enum OutputMode : LibC::Int
+  enum OutputMode : Int32
     Current = 0
     Normal = 1
     Color256 = 2
