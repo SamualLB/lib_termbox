@@ -1,4 +1,4 @@
-# LibTermbox
+# lib_termbox
 
 Binding for the [termbox](https://github.com/nsf/termbox) library
 
