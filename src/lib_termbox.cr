@@ -58,7 +58,7 @@ lib LibTermbox
     Home           = 0xFFFF - 14
     End            = 0xFFFF - 15
     PageUp         = 0xFFFF - 16
-    PageDowm       = 0xFFFF - 17
+    PageDown       = 0xFFFF - 17
     ArrowUp        = 0xFFFF - 18
     ArrowDown      = 0xFFFF - 19
     ArrowLeft      = 0xFFFF - 20
