@@ -4,11 +4,31 @@ Binding for the [termbox](https://github.com/nsf/termbox) library
 
 ## Installation
 
-TODO: Write installation instructions here
+1. Add to the `shard.yml`:
+
+```yaml
+dependencies:
+  lib_termbox:
+    github: SamualLB/libtermbox
+```
+
+2. Run `shards install`
+
+**NOTE**: This requires the termbox library!
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require "lib_termbox"
+```
+
+These a raw bindings, it is probably worth having some sort of interface between such as in the [TUI](https://github.com/SamualLB/tui) backend.
+
+A quick demo:
+
+```
+crystal run examples/init.cr
+```
 
 ## Development
 
