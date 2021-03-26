@@ -26,8 +26,7 @@ begin
   LibTermbox.present
 
   loop do
-    event = uninitialized LibTermbox::Event
-    LibTermbox.poll_event(pointerof(event))
+    LibTermbox.poll_event(out event)
     if LibTermbox::EventType.new(event.type) == LibTermbox::EventType::Key && 'q'.ord == event.ch
       break
     end
