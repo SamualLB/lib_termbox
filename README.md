@@ -1,3 +1,5 @@
+![Build Status](https://github.com/SamualLB/libtermbox/actions/workflows/test.yml/badge.svg)
+
 # lib_termbox
 
 Binding for the [termbox](https://github.com/nsf/termbox) library
@@ -9,7 +11,7 @@ Binding for the [termbox](https://github.com/nsf/termbox) library
 ```yaml
 dependencies:
   lib_termbox:
-    github: SamualLB/libtermbox
+    github: SamualLB/lib_termbox
 ```
 
 2. Run `shards install`
