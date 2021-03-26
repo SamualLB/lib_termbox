@@ -23,4 +23,4 @@ jobs:
           crystal: latest
 
       - name: Build example
-        run: crystal build src/init.cr
+        run: crystal build examples/init.cr
