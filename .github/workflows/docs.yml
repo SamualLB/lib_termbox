@@ -1,0 +1,29 @@
+name: Build Documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1.4.0
+        with:
+          crystal: latest
+
+      - name: Build docs
+        run: crystal docs
+
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
